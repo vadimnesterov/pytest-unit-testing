@@ -1,12 +1,16 @@
-# Diplom_1 - Unit Tests
+# Python Unit Test Suite
 
-Automated unit tests for a burger-ordering model written as part of the
-Yandex Practicum QA Automation course.
+Pytest unit test suite for a domain model covering a burger-ordering system.
+Tests verify the business logic of the `Bun`, `Ingredient`, `Burger`, and `Database`
+classes with 100% branch coverage.
 
-## What is tested
+## What is covered
 
-Unit tests covering the `Bun`, `Burger`, `Ingredient`, and `Database` classes
-in the `practicum` package. Test coverage is 100%.
+- `Burger.get_receipt()` - price calculation with correct bun and ingredient costs
+- `Burger.add_ingredient()` / `remove_ingredient()` - ingredient list management
+- `Burger.set_buns()` - bun assignment and price reflection
+- `Database` - available buns and ingredients retrieval
+- All parametrized over multiple bun/ingredient combinations
 
 ## Tech stack
 
@@ -30,9 +34,10 @@ pytest --cov=practicum --cov-report=html
 ## Project structure
 
 ```
-├── practicum/       # source code under test
-├── tests/
-│   ├── conftest.py  # shared fixtures
-│   └── test_burger.py
-└── requirements.txt
+pytest-unit-testing/
+    practicum/       # source code under test
+    tests/
+        conftest.py  # shared fixtures
+        test_burger.py
+    requirements.txt
 ```
